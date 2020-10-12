@@ -1,6 +1,8 @@
 [Database]
-ip = 192.168.0.200
+ip = 127.0.0.1
 login = smartmeter
 password = AyQ8pg5X
 database = smartmeter
 
+[Serialport]
+serialport = /dev/ttyUSB0

@@ -16,6 +16,8 @@ class Dsmr:
         self.connection = self.engine.connect()
         self.metadata = db.MetaData()
 
+        serialport_info = config_object['Serialport']
+        self.serialport = serialport_info['serialport']
         self.telegram = ''
         self.timestamp = ''
         self.power_low = ''
@@ -32,7 +34,7 @@ class Dsmr:
         ser.xonxoff = 1
         ser.rtscts = 0
         ser.timeout = 12
-        ser.port = "/dev/ttyUSB0"
+        ser.port = self.serialport
 
         # open serial port
         try:
